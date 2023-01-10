@@ -1,0 +1,31 @@
+// CTRL + SHIT + P -> Live Sass: Watch Sass cria o arq style.css e style.css.map
+$cor-principal: #FA58B6;
+$cor-secundaria: #270082;
+@mixin reset {
+    margin: 0;
+    padding: 0;
+}
+@mixin cor-texto($cor-fundo, $cor-texto) {
+    width: 50%;
+    background-color: $cor-fundo;
+    .texto {
+        margin-top: 40%;
+        text-align: center;
+        font-size: 150px;
+        color: $cor-texto;
+    }
+}
+
+body {
+    @include reset;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    .esquerdo {
+        @include cor-texto($cor-principal, $cor-secundaria)
+    }
+    .direito {
+        @include cor-texto($cor-secundaria, $cor-principal)
+    }
+}
